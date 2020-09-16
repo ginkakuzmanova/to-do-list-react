@@ -1,11 +1,10 @@
 import React, {createContext, useEffect, useState} from 'react'
 import uuid from 'uuid'
 
-export const TaskContext = createContext()
+export const TaskContext = createContext(null)
 
 const TaskContextProvider = props => {
     const initialState = JSON.parse(localStorage.getItem('tasks')) || []
-
     const [tasks, setTasks] = useState(initialState)
 
     useEffect(() => {
@@ -32,16 +31,12 @@ const TaskContextProvider = props => {
     // Find task
     const findItem = id => {
         const item = tasks.find(task => task.id === id)
-
         setEditItem(item)
     }
 
     // Edit task
     const editTask = (title, id) => {
         const newTasks = tasks.map(task => (task.id === id ? {title, id} : task))
-
-        console.log(newTasks)
-
         setTasks(newTasks)
         setEditItem(null)
     }

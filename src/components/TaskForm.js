@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { TaskContext } from '../TaskContext'
+import React, {useContext, useEffect, useState} from 'react'
+import {TaskContext} from '../TaskContext'
 
 const TaskForm = () => {
-    const { addTask, clearList, editTask, editItem } = useContext(TaskContext)
+    const {addTask, clearList, editTask, editItem} = useContext(TaskContext)
     const [title, setTitle] = useState('')
 
     const handleSubmit = e => {
@@ -22,7 +22,6 @@ const TaskForm = () => {
     useEffect(() => {
         if (editItem) {
             setTitle(editItem.title)
-            console.log(editItem)
         } else {
             setTitle('')
         }
