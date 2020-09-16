@@ -11,10 +11,10 @@ const App = () => {
         <TaskContext>
             <div className="container">
                 <div className="app-wrapper">
-                    <Header />
+                    <Header/>
                     <div className="main">
-                        <TaskForm />
-                        <TaskList />
+                        <TaskForm/>
+                        <TaskList/>
                     </div>
                 </div>
             </div>

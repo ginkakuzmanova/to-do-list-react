@@ -51,8 +51,7 @@ const TaskContextProvider = props => {
                 findItem,
                 editTask,
                 editItem
-            }}
-        >
+            }}>
             {props.children}
         </TaskContext.Provider>
     )
